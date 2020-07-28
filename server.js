@@ -7,7 +7,7 @@ const { PeerServer } = require('peer');
 
 const peerServer = PeerServer({
     path: '/',
-    port: 3001
+    port: 80
 });
 
 app.set('view engine', 'ejs');
@@ -32,10 +32,6 @@ io.on('connection', socket => {
         })
     })
 });
-
-
-
-
 
 server.listen(process.env.PORT || 3000);
 
