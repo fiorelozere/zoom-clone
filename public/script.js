@@ -1,7 +1,7 @@
 const socket = io('/');
 
 const videoGrid = document.getElementById('video-grid');
-const peer = new Peer(undefined, {
+const peer = new Peer('id', {
     host: 'fio-zoom-clone.herokuapp.com',
     port: 3001,
     path: '/'
