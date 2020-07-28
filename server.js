@@ -3,9 +3,8 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const {v4: uuidV4} = require('uuid');
-const { PeerServer } = require('peer');
+const { ExpressPeerServer } = require('peer');
 
-const peerServer = PeerServer({ port: 443, path: '/' });
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -30,3 +29,7 @@ io.on('connection', socket => {
     })
 });
 server.listen(process.env.PORT || 3000);
+
+const peerServer = ExpressPeerServer(server, {
+    path: '/'
+});
