@@ -7,7 +7,7 @@ const { PeerServer } = require('peer');
 
 const peerServer = PeerServer({
     path: '/',
-    port: 80
+    port: 8080
 });
 
 app.set('view engine', 'ejs');
